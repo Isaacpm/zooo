@@ -23,7 +23,7 @@ class Zoo:
         self.name = name
 
     def __repr__(self):
-        return "This is {} Zoo, it has {} cages".format(self.name, self.count_cages)
+        return "This is {} Zoo, it has {} cages".format(self.name, self.count_cages())
 
 
 class Cage:
