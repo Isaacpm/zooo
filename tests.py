@@ -1,5 +1,8 @@
 import unittest
-from zoo_project import Cage, Animal, Zoo
+
+from zoo_project import Animal
+from zoo_project import Cage
+from zoo_project import Zoo
 
 
 class TestZooCreation(unittest.TestCase):
@@ -87,7 +90,7 @@ class TestPredatorDoesntEatAnimalNotInList(unittest.TestCase):
         cage = Cage()
         cage.add_animal(freddie_the_lion)
         cage.add_animal(turty_the_turtle)
-        self.assertEqual(cage.animals, [freddie_the_lion,turty_the_turtle])
+        self.assertEqual(cage.animals, [freddie_the_lion, turty_the_turtle])
 
 
 class TestAddCageToZoo(unittest.TestCase):

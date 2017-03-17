@@ -3,6 +3,7 @@
 
 
 class Zoo:
+
     """Defines a Zoo and stores the cages in it
     """
 
@@ -27,6 +28,7 @@ class Zoo:
 
 
 class Cage:
+
     """Definition of the zoo cages.
     It needs a zoo for the cage
     """
@@ -36,7 +38,8 @@ class Cage:
         """Adds an animal to the cage
         """
         # Checks if the animal has a list known of preys, if it does, it's added to the cage and the existing animals
-        #  are checked against the list of preys, removing the ones that match as they are eaten by the new predator.
+        # are checked against the list of preys, removing the ones that match
+        # as they are eaten by the new predator.
         if hasattr(new_animal, 'preys'):
             for animal in self.animals:
                 if animal.species.lower() in new_animal.preys:
@@ -74,25 +77,61 @@ class Cage:
 
 
 class Animal:
-    """Adds an animal to a cage, required attributes are:
-    species
+
+    """Creates an animal
     name
-    cage
+    """
+
+    def __init__(self, name):
+        self.name = name
+
+    def __repr__(self):
+        return "{}".format(self.name)
+
+
+class Lion(Animal):
+
+    """Species class will define the specific characteristics of the animals that are not shared between them
     """
 
     def __init__(self, name, species):
-        self.name = name
-        self.species = species
+        Animal.__init__(self, name)
+        self.species = "Lion"
         # If the animal species has known preys, they will be added as the prey property of the animal,
         #  to be used when the animal is added to the cage.
-        if species.lower() == "lion":
-            self.preys = ["sheep", "wildebeest", "impala", "zebra", "giraffe", "buffalo", "wild hog", "rhinoceros",
-                          "hippopotamus"]
-        if species.lower() == "tiger":
-            self.preys = ["boar", "wild pig", "bear", "buffalo", "wild cattle", "deer", "antelopes", "monkey"]
-        if species.lower() == "hyena":
-            self.preys = ["impalas", "gazelles", "wildebeests", "zebras", "goat", "sheep", "horse"]
+        self.preys = ["sheep", "wildebeest", "impala", "zebra", "giraffe", "buffalo", "wild hog", "rhinoceros", "hippopotamus"]
 
     def __repr__(self):
         return "{} the {}".format(self.name, self.species)
 
+
+class Tiger(Animal):
+
+    """Species class will define the specific characteristics of the animals that are not shared between them
+    """
+
+    def __init__(self, name, species):
+        Animal.__init__(self, name)
+        self.species = "Lion"
+        # If the animal species has known preys, they will be added as the prey property of the animal,
+        #  to be used when the animal is added to the cage.
+        self.preys = ["impalas", "gazelles", "wildebeests", "zebras", "goat", "sheep", "horse"]
+
+    def __repr__(self):
+        return "{} the {}".format(self.name, self.species)
+
+
+class Hyena(Animal):
+
+    """Species class will define the specific characteristics of the animals that are not shared between them
+    """
+
+    def __init__(self, name, species):
+        Animal.__init__(self, name)
+        self.species = "Lion"
+        # If the animal species has known preys, they will be added as the prey property of the animal,
+        #  to be used when the animal is added to the cage.
+        self.preys = ["boar", "wild pig", "bear", "buffalo", "wild cattle", "deer", "antelopes", "monkey"]
+
+    def __repr__(self):
+        return "{} the {}".format(self.name, self.species)
