@@ -25,7 +25,7 @@ class TestAnimalCreation(unittest.TestCase):
 
     def test_animal(self):
         freddie_the_lion = Animal("Freddie", "Lion")
-        self.assertEqual(freddie_the_lion.animal_name, 'Freddie')
+        self.assertEqual(freddie_the_lion.name, 'Freddie')
 
 
 class TestAddAnimalToCage(unittest.TestCase):
@@ -36,7 +36,7 @@ class TestAddAnimalToCage(unittest.TestCase):
         freddie_the_lion = Animal("Freddie", "Lion")
         cage = Cage()
         cage.add_animal(freddie_the_lion)
-        self.assertEqual(str(cage.animals[0]), 'Freddie the Lion')
+        self.assertEqual(cage.animals, [freddie_the_lion])
 
 
 class TestDeleteAnimalFromCage(unittest.TestCase):
@@ -50,7 +50,7 @@ class TestDeleteAnimalFromCage(unittest.TestCase):
         cage.add_animal(freddie_the_lion)
         cage.add_animal(turty_the_turtle)
         cage.delete_animal(freddie_the_lion)
-        self.assertEqual(len(cage.animals), 1)
+        self.assertEqual(cage.animals, [turty_the_turtle])
 
 
 class TestPredatorEatsPrey(unittest.TestCase):
@@ -66,7 +66,7 @@ class TestPredatorEatsPrey(unittest.TestCase):
         cage = Cage()
         cage.add_animal(freddie_the_lion)
         cage.add_animal(bobby_the_sheep)
-        self.assertEqual(len(cage.animals), 1)
+        self.assertEqual(cage.animals, [freddie_the_lion])
 
     def test_new_predator_eats_prey(self):
         freddie_the_lion = Animal("Freddie", "Lion")
@@ -74,7 +74,7 @@ class TestPredatorEatsPrey(unittest.TestCase):
         cage = Cage()
         cage.add_animal(bobby_the_sheep)
         cage.add_animal(freddie_the_lion)
-        self.assertEqual(len(cage.animals), 1)
+        self.assertEqual(cage.animals, [freddie_the_lion])
 
 
 class TestPredatorDoesntEatAnimalNotInList(unittest.TestCase):
@@ -87,7 +87,7 @@ class TestPredatorDoesntEatAnimalNotInList(unittest.TestCase):
         cage = Cage()
         cage.add_animal(freddie_the_lion)
         cage.add_animal(turty_the_turtle)
-        self.assertEqual(len(cage.animals), 2)
+        self.assertEqual(cage.animals, [freddie_the_lion,turty_the_turtle])
 
 
 class TestAddCageToZoo(unittest.TestCase):

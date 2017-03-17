@@ -39,11 +39,11 @@ class Cage:
         #  are checked against the list of preys, removing the ones that match as they are eaten by the new predator.
         if hasattr(new_animal, 'preys'):
             for animal in self.animals:
-                if animal.animal_species.lower() in new_animal.preys:
+                if animal.species.lower() in new_animal.preys:
                     self.delete_animal(animal)
                     print(("{} just ate {}, this happened because you are placing predators"
                            "in the same cages as their preys!")
-                          .format(new_animal.animal_name, animal.animal_name))
+                          .format(new_animal.name, animal.name))
             self.animals.append(new_animal)
         # If the new animal does not have known preys, it may be that it is itself a prey, we check if any of the
         # existing animals is a predator for the new animal. If this happen to be true,
@@ -51,9 +51,9 @@ class Cage:
         else:
             for animal in self.animals:
                 if hasattr(animal, 'preys'):
-                    if new_animal.animal_species.lower() in animal.preys:
+                    if new_animal.species.lower() in animal.preys:
                         print(("{} has just been eaten by {}, this happened because you are placing predators"
-                               "in the same cages as their preys!").format(new_animal.animal_name, animal.animal_name))
+                               "in the same cages as their preys!").format(new_animal.name, animal.name))
                         del(new_animal)
                         return
             self.animals.append(new_animal)
@@ -75,23 +75,24 @@ class Cage:
 
 class Animal:
     """Adds an animal to a cage, required attributes are:
-    animal_species
-    animal_name
+    species
+    name
     cage
     """
 
-    def __init__(self, animal_name, animal_species):
-        self.animal_name = animal_name
-        self.animal_species = animal_species
+    def __init__(self, name, species):
+        self.name = name
+        self.species = species
         # If the animal species has known preys, they will be added as the prey property of the animal,
         #  to be used when the animal is added to the cage.
-        if animal_species.lower() == "lion":
+        if species.lower() == "lion":
             self.preys = ["sheep", "wildebeest", "impala", "zebra", "giraffe", "buffalo", "wild hog", "rhinoceros",
                           "hippopotamus"]
-        if animal_species.lower() == "tiger":
+        if species.lower() == "tiger":
             self.preys = ["boar", "wild pig", "bear", "buffalo", "wild cattle", "deer", "antelopes", "monkey"]
-        if animal_species.lower() == "hyena":
+        if species.lower() == "hyena":
             self.preys = ["impalas", "gazelles", "wildebeests", "zebras", "goat", "sheep", "horse"]
 
     def __repr__(self):
-        return "{} the {}".format(self.animal_name, self.animal_species)
+        return "{} the {}".format(self.name, self.species)
+
