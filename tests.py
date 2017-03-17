@@ -1,8 +1,6 @@
 import unittest
 
-from zoo_project import Animal
-from zoo_project import Cage
-from zoo_project import Zoo
+from zoo_project import Zoo, Cage, Animal, Tiger, Sheep, Turtle, Hyena, Lion
 
 
 class TestZooCreation(unittest.TestCase):
@@ -22,13 +20,49 @@ class TestCageCreation(unittest.TestCase):
         cage = Cage()
 
 
-class TestAnimalCreation(unittest.TestCase):
+class TestLionCreation(unittest.TestCase):
     """Creates an animal and checks that the name corresponds to the one we used at creation time.
     """
 
     def test_animal(self):
-        freddie_the_lion = Animal("Freddie", "Lion")
-        self.assertEqual(freddie_the_lion.name, 'Freddie')
+        freddie = Lion("Freddie")
+        self.assertEqual(freddie.name, 'Freddie')
+
+
+class TestTigerCreation(unittest.TestCase):
+    """Creates an animal and checks that the name corresponds to the one we used at creation time.
+    """
+
+    def test_animal(self):
+        tigress = Tiger("Tigress")
+        self.assertEqual(tigress.name, 'Tigress')
+
+
+class TestHyenaCreation(unittest.TestCase):
+    """Creates an animal and checks that the name corresponds to the one we used at creation time.
+    """
+
+    def test_animal(self):
+        banzay = Hyena("Banzay")
+        self.assertEqual(banzay.name, 'Banzay')
+
+
+class TestTurtleCreation(unittest.TestCase):
+    """Creates an animal and checks that the name corresponds to the one we used at creation time.
+    """
+
+    def test_animal(self):
+        leonardo = Turtle("Leonardo")
+        self.assertEqual(leonardo.name, 'Leonardo')
+
+
+class TestSheepCreation(unittest.TestCase):
+    """Creates an animal and checks that the name corresponds to the one we used at creation time.
+    """
+
+    def test_animal(self):
+        dolly = Sheep("Dolly")
+        self.assertEqual(dolly.name, 'Dolly')
 
 
 class TestAddAnimalToCage(unittest.TestCase):
@@ -36,10 +70,10 @@ class TestAddAnimalToCage(unittest.TestCase):
     """
 
     def test_add_animal_to_cage(self):
-        freddie_the_lion = Animal("Freddie", "Lion")
+        freddie = Lion("Freddie")
         cage = Cage()
-        cage.add_animal(freddie_the_lion)
-        self.assertEqual(cage.animals, [freddie_the_lion])
+        cage.add_animal(freddie)
+        self.assertEqual(cage.animals, [freddie])
 
 
 class TestDeleteAnimalFromCage(unittest.TestCase):
@@ -47,13 +81,13 @@ class TestDeleteAnimalFromCage(unittest.TestCase):
     """
 
     def test_delete_animal_from_cage(self):
-        freddie_the_lion = Animal("Freddie", "Lion")
-        turty_the_turtle = Animal("Turty", "Turtle")
+        freddie = Lion("Freddie")
+        leonardo = Turtle("Leonardo")
         cage = Cage()
-        cage.add_animal(freddie_the_lion)
-        cage.add_animal(turty_the_turtle)
-        cage.delete_animal(freddie_the_lion)
-        self.assertEqual(cage.animals, [turty_the_turtle])
+        cage.add_animal(freddie)
+        cage.add_animal(leonardo)
+        cage.delete_animal(freddie)
+        self.assertEqual(cage.animals, [leonardo])
 
 
 class TestPredatorEatsPrey(unittest.TestCase):
@@ -64,20 +98,20 @@ class TestPredatorEatsPrey(unittest.TestCase):
     """
 
     def test_predator_eats_new_prey(self):
-        freddie_the_lion = Animal("Freddie", "Lion")
-        bobby_the_sheep = Animal("Bobby", "Sheep")
+        freddie = Lion("Freddie")
+        dolly = Sheep("Dolly")
         cage = Cage()
-        cage.add_animal(freddie_the_lion)
-        cage.add_animal(bobby_the_sheep)
-        self.assertEqual(cage.animals, [freddie_the_lion])
+        cage.add_animal(freddie)
+        cage.add_animal(dolly)
+        self.assertEqual(cage.animals, [freddie])
 
     def test_new_predator_eats_prey(self):
-        freddie_the_lion = Animal("Freddie", "Lion")
-        bobby_the_sheep = Animal("Bobby", "Sheep")
+        dolly = Sheep("Dolly")
+        freddie = Lion("Freddie")
         cage = Cage()
-        cage.add_animal(bobby_the_sheep)
-        cage.add_animal(freddie_the_lion)
-        self.assertEqual(cage.animals, [freddie_the_lion])
+        cage.add_animal(dolly)
+        cage.add_animal(freddie)
+        self.assertEqual(cage.animals, [freddie])
 
 
 class TestPredatorDoesntEatAnimalNotInList(unittest.TestCase):
@@ -85,12 +119,12 @@ class TestPredatorDoesntEatAnimalNotInList(unittest.TestCase):
     """
 
     def test_predator_eats_new_prey(self):
-        freddie_the_lion = Animal("Freddie", "Lion")
-        turty_the_turtle = Animal("Turty", "Turtle")
+        freddie = Lion("Freddie")
+        leonardo = Turtle("Leonardo")
         cage = Cage()
-        cage.add_animal(freddie_the_lion)
-        cage.add_animal(turty_the_turtle)
-        self.assertEqual(cage.animals, [freddie_the_lion, turty_the_turtle])
+        cage.add_animal(freddie)
+        cage.add_animal(leonardo)
+        self.assertEqual(cage.animals, [freddie, leonardo])
 
 
 class TestAddCageToZoo(unittest.TestCase):
