@@ -43,7 +43,7 @@ class Cage:
         if hasattr(new_animal, 'preys'):
             for animal in self.animals:
                 if animal.species.lower() in new_animal.preys:
-                    self.delete_animal(animal)
+                    self.obliterate_animal(animal)
                     print(("{} just ate {}, this happened because you are placing predators"
                            "in the same cages as their preys!")
                           .format(new_animal.name, animal.name))
@@ -61,7 +61,7 @@ class Cage:
                         return
             self.animals.append(new_animal)
 
-    def delete_animal(self, animal):
+    def obliterate_animal(self, animal):
         """ Deletes animals from the cage, this can be a manual action by the zoo keeper or due to a predator eating preys
         """
         self.animals.remove(animal)
