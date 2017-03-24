@@ -4,7 +4,8 @@ from zoo_project import Zoo, Cage, Animal, Tiger, Sheep, Turtle, Hyena, Lion
 
 
 class TestZooCreation(unittest.TestCase):
-    """Just creates a Zoo and checks the name is the same one we used at creation time.
+    """Just creates a Zoo and checks
+    the name is the same one we used at creation time.
     """
 
     def test_zoo(self):
@@ -21,7 +22,8 @@ class TestCageCreation(unittest.TestCase):
 
 
 class TestLionCreation(unittest.TestCase):
-    """Creates an animal and checks that the name corresponds to the one we used at creation time.
+    """Creates an animal and checks
+    that the name corresponds to the one we used at creation time.
     """
 
     def test_animal(self):
@@ -30,7 +32,8 @@ class TestLionCreation(unittest.TestCase):
 
 
 class TestTigerCreation(unittest.TestCase):
-    """Creates an animal and checks that the name corresponds to the one we used at creation time.
+    """Creates an animal and checks
+    that the name corresponds to the one we used at creation time.
     """
 
     def test_animal(self):
@@ -39,7 +42,8 @@ class TestTigerCreation(unittest.TestCase):
 
 
 class TestHyenaCreation(unittest.TestCase):
-    """Creates an animal and checks that the name corresponds to the one we used at creation time.
+    """Creates an animal and checks
+    that the name corresponds to the one we used at creation time.
     """
 
     def test_animal(self):
@@ -48,7 +52,8 @@ class TestHyenaCreation(unittest.TestCase):
 
 
 class TestTurtleCreation(unittest.TestCase):
-    """Creates an animal and checks that the name corresponds to the one we used at creation time.
+    """Creates an animal and checks
+    that the name corresponds to the one we used at creation time.
     """
 
     def test_animal(self):
@@ -57,7 +62,8 @@ class TestTurtleCreation(unittest.TestCase):
 
 
 class TestSheepCreation(unittest.TestCase):
-    """Creates an animal and checks that the name corresponds to the one we used at creation time.
+    """Creates an animal and checks
+    that the name corresponds to the one we used at creation time.
     """
 
     def test_animal(self):
@@ -66,7 +72,9 @@ class TestSheepCreation(unittest.TestCase):
 
 
 class TestAddAnimalToCage(unittest.TestCase):
-    """Creates an animal, adds it to the cage and checks that the cage contains an animal with the right name in the text.
+    """Creates an animal, adds it to the cage
+    and checks that the cage contains an animal
+    with the right name in the text.
     """
 
     def test_add_animal_to_cage(self):
@@ -77,7 +85,8 @@ class TestAddAnimalToCage(unittest.TestCase):
 
 
 class TestDeleteAnimalFromCage(unittest.TestCase):
-    """Creates and adds two animals to a cage, then deletes one and expects the number of animals in the cage to be 1.
+    """Creates and adds two animals to a cage,
+    then deletes one and expects the number of animals in the cage to be 1.
     """
 
     def test_delete_animal_from_cage(self):
@@ -91,9 +100,12 @@ class TestDeleteAnimalFromCage(unittest.TestCase):
 
 
 class TestPredatorEatsPrey(unittest.TestCase):
-    """Creates and adds two animals to a cage, one of them it's a predator and the other one is a prey.
+    """Creates and adds two animals to a cage,
+    one of them it's a predator and the other one is a prey.
     Expects the number of animals in the cage to be 1.
-    This is tested in two different ways, first adding a predator and then a prey. And secondly adding the prey first.
+    This is tested in two different ways,
+    first adding a predator and then a prey.
+    And secondly adding the prey first.
     Both behaviours should result in the predator being left on its own.
     """
 
@@ -115,10 +127,11 @@ class TestPredatorEatsPrey(unittest.TestCase):
 
 
 class TestPredatorDoesntEatAnimalNotInList(unittest.TestCase):
-    """Creates a predator and a prey, in this case the prey is not in the predator's prey list, so it survives.
+    """Creates a predator and a prey,
+    in this case the prey is not in the predator's prey list, so it survives.
     """
 
-    def test_predator_eats_new_prey(self):
+    def test_predator_ignores_new_animal_not_in_prey_list(self):
         freddie = Lion("Freddie")
         leonardo = Turtle("Leonardo")
         cage = Cage()
@@ -128,7 +141,9 @@ class TestPredatorDoesntEatAnimalNotInList(unittest.TestCase):
 
 
 class TestAddCageToZoo(unittest.TestCase):
-    """Creates an animal, adds it to the cage and checks that the cage contains an animal with the right name in the text.
+    """Creates an animal,
+    adds it to the cage and checks
+    that the cage contains an animal with the right name in the text.
     """
 
     def test_upper(self):
