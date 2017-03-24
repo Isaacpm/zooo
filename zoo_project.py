@@ -23,7 +23,7 @@ class Zoo:
         self.cages = []
         self.name = name
 
-    def __repr__(self):
+    def __str__(self):
         return "This is {} Zoo, it has {} cages".format(self.name,
                                                         self.count_cages())
 
@@ -80,7 +80,7 @@ class Cage:
         self.cage_number = Cage.cage_counter
         Cage.cage_counter += 1
 
-    def __repr__(self):
+    def __str__(self):
         return "This is the cage number {}\
         and it contains the following animals {}".format(self.cage_number,
                                                          self.animals)
@@ -95,7 +95,7 @@ class Animal:
     def __init__(self, name):
         self.name = name
 
-    def __repr__(self):
+    def __str__(self):
         return "{}".format(self.name)
 
 
@@ -115,7 +115,7 @@ class Lion(Animal):
                       "giraffe", "buffalo", "wild hog", "rhinoceros",
                       "hippopotamus"]
 
-    def __repr__(self):
+    def __str__(self):
         return "{} the {}".format(self.name, self.species)
 
 
@@ -134,7 +134,7 @@ class Tiger(Animal):
         self.preys = ["impalas", "gazelles", "wildebeests",
                       "zebras", "goat", "sheep", "horse"]
 
-    def __repr__(self):
+    def __str__(self):
         return "{} the {}".format(self.name, self.species)
 
 
@@ -153,7 +153,7 @@ class Hyena(Animal):
         self.preys = ["boar", "wild pig", "bear", "buffalo",
                       "wild cattle", "deer", "antelopes", "monkey"]
 
-    def __repr__(self):
+    def __str__(self):
         return "{} the {}".format(self.name, self.species)
 
 
@@ -167,7 +167,7 @@ class Turtle(Animal):
         super().__init__(name)
         self.species = "Turtle"
 
-    def __repr__(self):
+    def __str__(self):
         return "{} the {}".format(self.name, self.species)
 
 
@@ -181,5 +181,5 @@ class Sheep(Animal):
         super().__init__(name)
         self.species = "Sheep"
 
-    def __repr__(self):
+    def __str__(self):
         return "{} the {}".format(self.name, self.species)
