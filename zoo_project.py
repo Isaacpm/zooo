@@ -106,12 +106,13 @@ class Lion(Animal):
     """
 
     def __init__(self, name):
-        Animal.__init__(self, name)
+        super().__init__(name)
         self.species = "Lion"
         # If the animal species has known preys,
         # they will be added as the prey property of the animal,
         #  to be used when the animal is added to the cage.
-        self.preys = ["sheep", "wildebeest", "impala", "zebra", "giraffe", "buffalo", "wild hog", "rhinoceros",
+        self.preys = ["sheep", "wildebeest", "impala", "zebra",
+                      "giraffe", "buffalo", "wild hog", "rhinoceros",
                       "hippopotamus"]
 
     def __repr__(self):
@@ -125,7 +126,7 @@ class Tiger(Animal):
     """
 
     def __init__(self, name):
-        Animal.__init__(self, name)
+        super().__init__(name)
         self.species = "Lion"
         # If the animal species has known preys,
         # they will be added as the prey property of the animal,
@@ -144,7 +145,7 @@ class Hyena(Animal):
     """
 
     def __init__(self, name):
-        Animal.__init__(self, name)
+        super().__init__(name)
         self.species = "Lion"
         # If the animal species has known preys,
         # they will be added as the prey property of the animal,
@@ -163,7 +164,7 @@ class Turtle(Animal):
     """
 
     def __init__(self, name):
-        Animal.__init__(self, name)
+        super().__init__(name)
         self.species = "Turtle"
 
     def __repr__(self):
@@ -177,7 +178,7 @@ class Sheep(Animal):
     """
 
     def __init__(self, name):
-        Animal.__init__(self, name)
+        super().__init__(name)
         self.species = "Sheep"
 
     def __repr__(self):
