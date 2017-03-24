@@ -106,10 +106,10 @@ class Turtle(Animal):
     """Species class will define the specific
     characteristics of the animals that are not shared between them
     """
+    species = "Turtle"
 
     def __init__(self, name):
         super().__init__(name)
-        self.species = "Turtle"
 
     def __str__(self):
         return "{} the {}".format(self.name, self.species)
@@ -120,10 +120,10 @@ class Antelopes(Animal):
     """Species class will define the specific
     characteristics of the animals that are not shared between them
     """
+    species = "Antelopes"
 
     def __init__(self, name):
         super().__init__(name)
-        self.species = "Antelopes"
 
     def __str__(self):
         return "{} the {}".format(self.name, self.species)
@@ -134,10 +134,10 @@ class Monkey(Animal):
     """Species class will define the specific
     characteristics of the animals that are not shared between them
     """
+    species = "Monkey"
 
     def __init__(self, name):
         super().__init__(name)
-        self.species = "Monkey"
 
     def __str__(self):
         return "{} the {}".format(self.name, self.species)
@@ -148,10 +148,10 @@ class Wildebeest(Animal):
     """Species class will define the specific
     characteristics of the animals that are not shared between them
     """
+    species = "Wildebeest"
 
     def __init__(self, name):
         super().__init__(name)
-        self.species = "Wildebeest"
 
     def __str__(self):
         return "{} the {}".format(self.name, self.species)
@@ -162,6 +162,7 @@ class Boar(Animal):
     """Species class will define the specific
     characteristics of the animals that are not shared between them
     """
+    species = "Boar"
 
     def __init__(self, name):
         super().__init__(name)
@@ -176,10 +177,10 @@ class WildPig(Animal):
     """Species class will define the specific
     characteristics of the animals that are not shared between them
     """
+    species = "WildPig"
 
     def __init__(self, name):
         super().__init__(name)
-        self.species = "WildPig"
 
     def __str__(self):
         return "{} the {}".format(self.name, self.species)
@@ -190,10 +191,10 @@ class Bear(Animal):
     """Species class will define the specific
     characteristics of the animals that are not shared between them
     """
+    species = "Bear"
 
     def __init__(self, name):
         super().__init__(name)
-        self.species = "Bear"
 
     def __str__(self):
         return "{} the {}".format(self.name, self.species)
@@ -204,10 +205,10 @@ class WildCattle(Animal):
     """Species class will define the specific
     characteristics of the animals that are not shared between them
     """
+    species = "WildCattle"
 
     def __init__(self, name):
         super().__init__(name)
-        self.species = "WildCattle"
 
     def __str__(self):
         return "{} the {}".format(self.name, self.species)
@@ -218,10 +219,10 @@ class Deer(Animal):
     """Species class will define the specific
     characteristics of the animals that are not shared between them
     """
+    species = "Deer"
 
     def __init__(self, name):
         super().__init__(name)
-        self.species = "Deer"
 
     def __str__(self):
         return "{} the {}".format(self.name, self.species)
@@ -232,10 +233,10 @@ class Impala(Animal):
     """Species class will define the specific
     characteristics of the animals that are not shared between them
     """
+    species = "Impala"
 
     def __init__(self, name):
         super().__init__(name)
-        self.species = "Impala"
 
     def __str__(self):
         return "{} the {}".format(self.name, self.species)
@@ -246,10 +247,10 @@ class Zebra(Animal):
     """Species class will define the specific
     characteristics of the animals that are not shared between them
     """
+    species = "Zebra"
 
     def __init__(self, name):
         super().__init__(name)
-        self.species = "Zebra"
 
     def __str__(self):
         return "{} the {}".format(self.name, self.species)
@@ -260,10 +261,10 @@ class Giraffe(Animal):
     """Species class will define the specific
     characteristics of the animals that are not shared between them
     """
+    species = "Giraffe"
 
     def __init__(self, name):
         super().__init__(name)
-        self.species = "Giraffe"
 
     def __str__(self):
         return "{} the {}".format(self.name, self.species)
@@ -274,10 +275,10 @@ class Buffalo(Animal):
     """Species class will define the specific
     characteristics of the animals that are not shared between them
     """
+    species = "Buffalo"
 
     def __init__(self, name):
         super().__init__(name)
-        self.species = "Buffalo"
 
     def __str__(self):
         return "{} the {}".format(self.name, self.species)
@@ -288,10 +289,10 @@ class WildHog(Animal):
     """Species class will define the specific
     characteristics of the animals that are not shared between them
     """
+    species = "WildHog"
 
     def __init__(self, name):
         super().__init__(name)
-        self.species = "WildHog"
 
     def __str__(self):
         return "{} the {}".format(self.name, self.species)
@@ -302,10 +303,10 @@ class Rhinoceros(Animal):
     """Species class will define the specific
     characteristics of the animals that are not shared between them
     """
+    species = "Rhinoceros"
 
     def __init__(self, name):
         super().__init__(name)
-        self.species = "Rhinoceros"
 
     def __str__(self):
         return "{} the {}".format(self.name, self.species)
@@ -316,10 +317,10 @@ class Hippopotamus(Animal):
     """Species class will define the specific
     characteristics of the animals that are not shared between them
     """
+    species = "Hippopotamus"
 
     def __init__(self, name):
         super().__init__(name)
-        self.species = "Hippopotamus"
 
     def __str__(self):
         return "{} the {}".format(self.name, self.species)
@@ -330,10 +331,10 @@ class Gazelles(Animal):
     """Species class will define the specific
     characteristics of the animals that are not shared between them
     """
+    species = "Gazelles"
 
     def __init__(self, name):
         super().__init__(name)
-        self.species = "Gazelles"
 
     def __str__(self):
         return "{} the {}".format(self.name, self.species)
@@ -344,10 +345,10 @@ class Goat(Animal):
     """Species class will define the specific
     characteristics of the animals that are not shared between them
     """
+    species = "Goat"
 
     def __init__(self, name):
         super().__init__(name)
-        self.species = "Goat"
 
     def __str__(self):
         return "{} the {}".format(self.name, self.species)
@@ -358,10 +359,10 @@ class Horse(Animal):
     """Species class will define the specific
     characteristics of the animals that are not shared between them
     """
+    species = "Horse"
 
     def __init__(self, name):
         super().__init__(name)
-        self.species = "Horse"
 
     def __str__(self):
         return "{} the {}".format(self.name, self.species)
@@ -372,10 +373,10 @@ class Sheep(Animal):
     """Species class will define the specific
     characteristics of the animals that are not shared between them
     """
+    species = "Sheep"
 
     def __init__(self, name):
         super().__init__(name)
-        self.species = "Sheep"
 
     def __str__(self):
         return "{} the {}".format(self.name, self.species)
@@ -392,13 +393,13 @@ class Lion(Animal):
     # If the animal species has known preys,
     # they will be added as the prey property of the animal,
     #  to be used when the animal is added to the cage.
+    species = "Lion"
     preys = [Sheep, Wildebeest, Impala, Zebra,
              Giraffe, Buffalo, WildHog, Rhinoceros,
              Hippopotamus]
 
     def __init__(self, name):
         super().__init__(name)
-        self.species = "Lion"
 
     def __str__(self):
         return "{} the {}".format(self.name, self.species)
@@ -412,12 +413,12 @@ class Tiger(Animal):
     # If the animal species has known preys,
     # they will be added as the prey property of the animal,
     #  to be used when the animal is added to the cage.
+    species = "Tiger"
     preys = [Impala, Gazelles, Wildebeest,
              Zebra, Goat, Sheep, Horse]
 
     def __init__(self, name):
         super().__init__(name)
-        self.species = "Tiger"
 
     def __str__(self):
         return "{} the {}".format(self.name, self.species)
@@ -432,12 +433,12 @@ class Hyena(Animal):
     # If the animal species has known preys,
     # they will be added as the prey property of the animal,
     #  to be used when the animal is added to the cage.
+    species = "Hyena"
     preys = [Boar, WildPig, Bear, Buffalo,
              WildCattle, Deer, Antelopes, Monkey]
 
     def __init__(self, name):
         super().__init__(name)
-        self.species = "Hyena"
 
     def __str__(self):
         return "{} the {}".format(self.name, self.species)
