@@ -1,6 +1,6 @@
 import unittest
 
-from zoo_project import Zoo, Cage, Animal, Tiger, Sheep, Turtle, Hyena, Lion
+from zoo_project import Zoo, Cage, Tiger, Sheep, Turtle, Hyena, Lion
 
 
 class TestZooCreation(unittest.TestCase):
@@ -21,52 +21,28 @@ class TestCageCreation(unittest.TestCase):
         cage = Cage()
 
 
-class TestLionCreation(unittest.TestCase):
+class TestAnimalsCreation(unittest.TestCase):
     """Creates an animal and checks
     that the name corresponds to the one we used at creation time.
     """
 
-    def test_animal(self):
+    def test_lion(self):
         freddie = Lion("Freddie")
         self.assertEqual(freddie.name, 'Freddie')
 
-
-class TestTigerCreation(unittest.TestCase):
-    """Creates an animal and checks
-    that the name corresponds to the one we used at creation time.
-    """
-
-    def test_animal(self):
+    def test_tiger(self):
         tigress = Tiger("Tigress")
         self.assertEqual(tigress.name, 'Tigress')
 
-
-class TestHyenaCreation(unittest.TestCase):
-    """Creates an animal and checks
-    that the name corresponds to the one we used at creation time.
-    """
-
-    def test_animal(self):
+    def test_hyena(self):
         banzay = Hyena("Banzay")
         self.assertEqual(banzay.name, 'Banzay')
 
-
-class TestTurtleCreation(unittest.TestCase):
-    """Creates an animal and checks
-    that the name corresponds to the one we used at creation time.
-    """
-
-    def test_animal(self):
+    def test_turtle(self):
         leonardo = Turtle("Leonardo")
         self.assertEqual(leonardo.name, 'Leonardo')
 
-
-class TestSheepCreation(unittest.TestCase):
-    """Creates an animal and checks
-    that the name corresponds to the one we used at creation time.
-    """
-
-    def test_animal(self):
+    def test_sheep(self):
         dolly = Sheep("Dolly")
         self.assertEqual(dolly.name, 'Dolly')
 
