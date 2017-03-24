@@ -44,7 +44,7 @@ class Cage:
         # as they are eaten by the new predator.
         if hasattr(new_animal, 'preys'):
             for animal in self.animals:
-                if animal.species.lower() in new_animal.preys:
+                if animal.__class__ in new_animal.preys:
                     self.delete_animal(animal)
                     print(("{} just ate {}, this happened because you are placing predators \
                            in the same cages as their preys!")
@@ -58,7 +58,7 @@ class Cage:
         else:
             for animal in self.animals:
                 if hasattr(animal, 'preys'):
-                    if new_animal.species.lower() in animal.preys:
+                    if new_animal.__class__ in animal.preys:
                         print(("{} has just been eaten by {},\
                             this happened because you are placing predators \
                             in the same cages as their preys!").format(
