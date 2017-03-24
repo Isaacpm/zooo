@@ -98,63 +98,7 @@ class Animal:
     def __str__(self):
         return "{}".format(self.name)
 
-
-class Lion(Animal):
-
-    """Species class will define the specific characteristics
-    of the animals that are not shared between them
-    """
-
-    def __init__(self, name):
-        super().__init__(name)
-        self.species = "Lion"
-        # If the animal species has known preys,
-        # they will be added as the prey property of the animal,
-        #  to be used when the animal is added to the cage.
-        self.preys = [Sheep, Wildebeest, Impala, Zebra,
-                      Giraffe, Buffalo, WildHog, Rhinoceros,
-                      Hippopotamus]
-
-    def __str__(self):
-        return "{} the {}".format(self.name, self.species)
-
-
-class Tiger(Animal):
-
-    """Species class will define the specific characteristics
-    of the animals that are not shared between them
-    """
-
-    def __init__(self, name):
-        super().__init__(name)
-        self.species = "Lion"
-        # If the animal species has known preys,
-        # they will be added as the prey property of the animal,
-        #  to be used when the animal is added to the cage.
-        self.preys = [Impala, Gazelles, Wildebeest,
-                      Zebra, Goat, Sheep, Horse]
-
-    def __str__(self):
-        return "{} the {}".format(self.name, self.species)
-
-
-class Hyena(Animal):
-
-    """Species class will define the specific characteristics
-    of the animals that are not shared between them
-    """
-
-    def __init__(self, name):
-        super().__init__(name)
-        self.species = "Lion"
-        # If the animal species has known preys,
-        # they will be added as the prey property of the animal,
-        #  to be used when the animal is added to the cage.
-        self.preys = [Boar, WildPig, Bear, Buffalo,
-                      WildCattle, Deer, Antelopes, Monkey]
-
-    def __str__(self):
-        return "{} the {}".format(self.name, self.species)
+# Defining preys first as they will be used by the predators
 
 
 class Turtle(Animal):
@@ -432,6 +376,68 @@ class Sheep(Animal):
     def __init__(self, name):
         super().__init__(name)
         self.species = "Sheep"
+
+    def __str__(self):
+        return "{} the {}".format(self.name, self.species)
+
+
+# Predators definitions
+
+
+class Lion(Animal):
+
+    """Species class will define the specific characteristics
+    of the animals that are not shared between them
+    """
+    # If the animal species has known preys,
+    # they will be added as the prey property of the animal,
+    #  to be used when the animal is added to the cage.
+    preys = [Sheep, Wildebeest, Impala, Zebra,
+             Giraffe, Buffalo, WildHog, Rhinoceros,
+             Hippopotamus]
+
+    def __init__(self, name):
+        super().__init__(name)
+        self.species = "Lion"
+
+    def __str__(self):
+        return "{} the {}".format(self.name, self.species)
+
+
+class Tiger(Animal):
+
+    """Species class will define the specific characteristics
+    of the animals that are not shared between them
+    """
+    # If the animal species has known preys,
+    # they will be added as the prey property of the animal,
+    #  to be used when the animal is added to the cage.
+    preys = [Impala, Gazelles, Wildebeest,
+             Zebra, Goat, Sheep, Horse]
+
+    def __init__(self, name):
+        super().__init__(name)
+        self.species = "Tiger"
+
+    def __str__(self):
+        return "{} the {}".format(self.name, self.species)
+
+
+class Hyena(Animal):
+
+    """Species class will define the specific characteristics
+    of the animals that are not shared between them
+    """
+
+    # If the animal species has known preys,
+    # they will be added as the prey property of the animal,
+    #  to be used when the animal is added to the cage.
+    preys = [Boar, WildPig, Bear, Buffalo,
+             WildCattle, Deer, Antelopes, Monkey]
+
+    def __init__(self, name):
+        super().__init__(name)
+        self.species = "Hyena"
 
     def __str__(self):
         return "{} the {}".format(self.name, self.species)
