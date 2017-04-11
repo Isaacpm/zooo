@@ -1,6 +1,6 @@
 import unittest
-
 from zoo_project import Zoo, Cage, Tiger, Sheep, Turtle, Hyena, Lion
+from unittest.mock import patch
 
 
 class TestZooCreation(unittest.TestCase):
@@ -85,7 +85,8 @@ class TestPredatorEatsPrey(unittest.TestCase):
     Both behaviours should result in the predator being left on its own.
     """
 
-    def test_predator_eats_new_prey(self):
+    @patch("builtins.print")
+    def test_predator_eats_new_prey(self, mock_print):
         freddie = Lion("Freddie")
         dolly = Sheep("Dolly")
         cage = Cage()
@@ -93,7 +94,8 @@ class TestPredatorEatsPrey(unittest.TestCase):
         cage.add_animal(dolly)
         self.assertEqual(cage.animals, [freddie])
 
-    def test_new_predator_eats_prey(self):
+    @patch("builtins.print")
+    def test_new_predator_eats_prey(self, mock_print):
         dolly = Sheep("Dolly")
         freddie = Lion("Freddie")
         cage = Cage()
