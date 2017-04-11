@@ -26,23 +26,23 @@ class TestAnimalsCreation(unittest.TestCase):
     that the name corresponds to the one we used at creation time.
     """
 
-    def test_lion(self):
+    def test_create_lion(self):
         freddie = Lion("Freddie")
         self.assertEqual(freddie.name, 'Freddie')
 
-    def test_tiger(self):
+    def test_create_tiger(self):
         tigress = Tiger("Tigress")
         self.assertEqual(tigress.name, 'Tigress')
 
-    def test_hyena(self):
+    def test_create_hyena(self):
         banzay = Hyena("Banzay")
         self.assertEqual(banzay.name, 'Banzay')
 
-    def test_turtle(self):
+    def test_create_turtle(self):
         leonardo = Turtle("Leonardo")
         self.assertEqual(leonardo.name, 'Leonardo')
 
-    def test_sheep(self):
+    def test_create_sheep(self):
         dolly = Sheep("Dolly")
         self.assertEqual(dolly.name, 'Dolly')
 
