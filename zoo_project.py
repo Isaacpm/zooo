@@ -35,38 +35,50 @@ class Cage:
     """
     cage_counter = 1
 
+    def add_predator(self, new_animal):
+        """Adds a predator to the cage
+            When a predator it's added to the cage the existing animals
+            are checked against the list of preys, removing the ones that match
+            as they are eaten by the new predator.
+        """
+        for animal in self.animals:
+            if animal.__class__ in new_animal.preys:
+                self.delete_animal(animal)
+                print(("{} just ate {}, this happened because you are placing predators \
+                       in the same cages as their preys!")
+                      .format(new_animal.name, animal.name))
+        self.animals.append(new_animal)
+
+    def add_prey(self, new_animal):
+        """Adds a prey, which is animal with no preys, to the cage
+            it may be that it is itself a prey, we check if any of the
+            existing animals is a predator for the new animal.
+            If this happen to be true,
+            the new animal will be eaten (deleted).
+        """
+        for animal in self.animals:
+            if hasattr(animal, 'preys'):
+                if new_animal.__class__ in animal.preys:
+                    print(("{} has just been eaten by {},\
+                        this happened because you are placing predators \
+                        in the same cages as their preys!").format(
+                        new_animal.name,
+                        animal.name))
+                    del(new_animal)
+                    return
+        self.animals.append(new_animal)
+
     def add_animal(self, new_animal):
         """Adds an animal to the cage
         """
-        # Checks if the animal has a list known of preys, if it does,
-        # it's added to the cage and the existing animals
-        # are checked against the list of preys, removing the ones that match
-        # as they are eaten by the new predator.
+        # Checks if the animal has a list known of preys, if it does
+        # it calls the add_predator property
         if hasattr(new_animal, 'preys'):
-            for animal in self.animals:
-                if animal.__class__ in new_animal.preys:
-                    self.delete_animal(animal)
-                    print(("{} just ate {}, this happened because you are placing predators \
-                           in the same cages as their preys!")
-                          .format(new_animal.name, animal.name))
-            self.animals.append(new_animal)
+            Cage.add_predator(self, new_animal)
         # If the new animal does not have known preys,
-        # it may be that it is itself a prey, we check if any of the
-        # existing animals is a predator for the new animal.
-        # If this happen to be true,
-        # the new animal will be eaten (deleted).
+        # it calls the add_prey property
         else:
-            for animal in self.animals:
-                if hasattr(animal, 'preys'):
-                    if new_animal.__class__ in animal.preys:
-                        print(("{} has just been eaten by {},\
-                            this happened because you are placing predators \
-                            in the same cages as their preys!").format(
-                            new_animal.name,
-                            animal.name))
-                        del(new_animal)
-                        return
-            self.animals.append(new_animal)
+            Cage.add_prey(self, new_animal)
 
     def delete_animal(self, animal):
         """ Deletes animals from the cage,
