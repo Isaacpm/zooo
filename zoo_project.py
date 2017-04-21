@@ -38,30 +38,30 @@ class Cage:
     def add_predator(self, new_animal):
         """Adds a predator to the cage
             When a predator it's added to the cage the existing animals
-            are checked against the list of preys, removing the ones that match
+            are checked against the list of prey, removing the ones that match
             as they are eaten by the new predator.
         """
         for animal in self.animals:
-            if animal.__class__ in new_animal.preys:
+            if animal.__class__ in new_animal.prey:
                 self.delete_animal(animal)
                 print(("{} just ate {}, this happened because you are placing predators \
-                       in the same cages as their preys!")
+                       in the same cages as their prey!")
                       .format(new_animal.name, animal.name))
         self.animals.append(new_animal)
 
     def add_prey(self, new_animal):
-        """Adds a prey, which is animal with no preys, to the cage
+        """Adds a prey, which is animal with no prey, to the cage
             it may be that it is itself a prey, we check if any of the
             existing animals is a predator for the new animal.
             If this happen to be true,
             the new animal will be eaten (deleted).
         """
         for animal in self.animals:
-            if hasattr(animal, 'preys'):
-                if new_animal.__class__ in animal.preys:
+            if hasattr(animal, 'prey'):
+                if new_animal.__class__ in animal.prey:
                     print(("{} has just been eaten by {},\
                         this happened because you are placing predators \
-                        in the same cages as their preys!").format(
+                        in the same cages as their prey!").format(
                         new_animal.name,
                         animal.name))
                     del(new_animal)
@@ -71,11 +71,11 @@ class Cage:
     def add_animal(self, new_animal):
         """Adds an animal to the cage
         """
-        # Checks if the animal has a list known of preys, if it does
+        # Checks if the animal has a list known of prey, if it does
         # it calls the add_predator property
-        if hasattr(new_animal, 'preys'):
+        if hasattr(new_animal, 'prey'):
             Cage.add_predator(self, new_animal)
-        # If the new animal does not have known preys,
+        # If the new animal does not have known prey,
         # it calls the add_prey property
         else:
             Cage.add_prey(self, new_animal)
@@ -83,7 +83,7 @@ class Cage:
     def delete_animal(self, animal):
         """ Deletes animals from the cage,
         this can be a manual action by the zoo
-        keeper or due to a predator eating preys
+        keeper or due to a predator eating prey
         """
         self.animals.remove(animal)
 
@@ -110,7 +110,7 @@ class Animal:
     def __str__(self):
         return "{}".format(self.name)
 
-# Defining preys first as they will be used by the predators
+# Defining prey first as they will be used by the predators
 
 
 class Turtle(Animal):
@@ -402,11 +402,11 @@ class Lion(Animal):
     """Species class will define the specific characteristics
     of the animals that are not shared between them
     """
-    # If the animal species has known preys,
+    # If the animal species has known prey,
     # they will be added as the prey property of the animal,
     #  to be used when the animal is added to the cage.
     species = "Lion"
-    preys = [Sheep, Wildebeest, Impala, Zebra,
+    prey = [Sheep, Wildebeest, Impala, Zebra,
              Giraffe, Buffalo, WildHog, Rhinoceros,
              Hippopotamus]
 
@@ -422,11 +422,11 @@ class Tiger(Animal):
     """Species class will define the specific characteristics
     of the animals that are not shared between them
     """
-    # If the animal species has known preys,
+    # If the animal species has known prey,
     # they will be added as the prey property of the animal,
     #  to be used when the animal is added to the cage.
     species = "Tiger"
-    preys = [Impala, Gazelles, Wildebeest,
+    prey = [Impala, Gazelles, Wildebeest,
              Zebra, Goat, Sheep, Horse]
 
     def __init__(self, name):
@@ -442,11 +442,11 @@ class Hyena(Animal):
     of the animals that are not shared between them
     """
 
-    # If the animal species has known preys,
+    # If the animal species has known prey,
     # they will be added as the prey property of the animal,
     #  to be used when the animal is added to the cage.
     species = "Hyena"
-    preys = [Boar, WildPig, Bear, Buffalo,
+    prey = [Boar, WildPig, Bear, Buffalo,
              WildCattle, Deer, Antelopes, Monkey]
 
     def __init__(self, name):
