@@ -108,28 +108,31 @@ class Animal:
         self.name = name
 
     def __str__(self):
-        return "{}".format(self.name)
+        return "{} the {}".format(self.name, self.species)
 
 # Defining prey first as they will be used by the predators
 
 
 class Turtle(Animal):
 
-    """Species class will define the specific
+    """Create animal species
+
+
+    Species class will define the specific
     characteristics of the animals that are not shared between them
     """
     species = "Turtle"
 
     def __init__(self, name):
-        super().__init__(name)
-
-    def __str__(self):
-        return "{} the {}".format(self.name, self.species)
+        self.__class__.__name__ = name
 
 
-class Antelopes(Animal):
+class Antelope(Animal):
 
-    """Species class will define the specific
+    """Create animal species
+
+
+    Species class will define the specific
     characteristics of the animals that are not shared between them
     """
     species = "Antelopes"
@@ -143,7 +146,10 @@ class Antelopes(Animal):
 
 class Monkey(Animal):
 
-    """Species class will define the specific
+    """Create animal species
+
+
+    Species class will define the specific
     characteristics of the animals that are not shared between them
     """
     species = "Monkey"
@@ -157,7 +163,10 @@ class Monkey(Animal):
 
 class Wildebeest(Animal):
 
-    """Species class will define the specific
+    """Create animal species
+
+
+    Species class will define the specific
     characteristics of the animals that are not shared between them
     """
     species = "Wildebeest"
@@ -171,7 +180,10 @@ class Wildebeest(Animal):
 
 class Boar(Animal):
 
-    """Species class will define the specific
+    """Create animal species
+
+
+    Species class will define the specific
     characteristics of the animals that are not shared between them
     """
     species = "Boar"
@@ -186,7 +198,10 @@ class Boar(Animal):
 
 class WildPig(Animal):
 
-    """Species class will define the specific
+    """Create animal species
+
+
+    Species class will define the specific
     characteristics of the animals that are not shared between them
     """
     species = "WildPig"
@@ -200,7 +215,10 @@ class WildPig(Animal):
 
 class Bear(Animal):
 
-    """Species class will define the specific
+    """Create animal species
+
+
+    Species class will define the specific
     characteristics of the animals that are not shared between them
     """
     species = "Bear"
@@ -214,7 +232,10 @@ class Bear(Animal):
 
 class WildCattle(Animal):
 
-    """Species class will define the specific
+    """Create animal species
+
+
+    Species class will define the specific
     characteristics of the animals that are not shared between them
     """
     species = "WildCattle"
@@ -228,7 +249,10 @@ class WildCattle(Animal):
 
 class Deer(Animal):
 
-    """Species class will define the specific
+    """Create animal species
+
+
+    Species class will define the specific
     characteristics of the animals that are not shared between them
     """
     species = "Deer"
@@ -242,7 +266,10 @@ class Deer(Animal):
 
 class Impala(Animal):
 
-    """Species class will define the specific
+    """Create animal species
+
+
+    Species class will define the specific
     characteristics of the animals that are not shared between them
     """
     species = "Impala"
@@ -256,7 +283,10 @@ class Impala(Animal):
 
 class Zebra(Animal):
 
-    """Species class will define the specific
+    """Create animal species
+
+
+    Species class will define the specific
     characteristics of the animals that are not shared between them
     """
     species = "Zebra"
@@ -270,7 +300,10 @@ class Zebra(Animal):
 
 class Giraffe(Animal):
 
-    """Species class will define the specific
+    """Create animal species
+
+
+    Species class will define the specific
     characteristics of the animals that are not shared between them
     """
     species = "Giraffe"
@@ -284,7 +317,10 @@ class Giraffe(Animal):
 
 class Buffalo(Animal):
 
-    """Species class will define the specific
+    """Create animal species
+
+
+    Species class will define the specific
     characteristics of the animals that are not shared between them
     """
     species = "Buffalo"
@@ -298,7 +334,10 @@ class Buffalo(Animal):
 
 class WildHog(Animal):
 
-    """Species class will define the specific
+    """Create animal species
+
+
+    Species class will define the specific
     characteristics of the animals that are not shared between them
     """
     species = "WildHog"
@@ -312,7 +351,10 @@ class WildHog(Animal):
 
 class Rhinoceros(Animal):
 
-    """Species class will define the specific
+    """Create animal species
+
+
+    Species class will define the specific
     characteristics of the animals that are not shared between them
     """
     species = "Rhinoceros"
@@ -326,7 +368,10 @@ class Rhinoceros(Animal):
 
 class Hippopotamus(Animal):
 
-    """Species class will define the specific
+    """Create animal species
+
+
+    Species class will define the specific
     characteristics of the animals that are not shared between them
     """
     species = "Hippopotamus"
@@ -340,7 +385,10 @@ class Hippopotamus(Animal):
 
 class Gazelles(Animal):
 
-    """Species class will define the specific
+    """Create animal species
+
+
+    Species class will define the specific
     characteristics of the animals that are not shared between them
     """
     species = "Gazelles"
@@ -354,7 +402,10 @@ class Gazelles(Animal):
 
 class Goat(Animal):
 
-    """Species class will define the specific
+    """Create animal species
+
+
+    Species class will define the specific
     characteristics of the animals that are not shared between them
     """
     species = "Goat"
@@ -368,7 +419,10 @@ class Goat(Animal):
 
 class Horse(Animal):
 
-    """Species class will define the specific
+    """Create animal species
+
+
+    Species class will define the specific
     characteristics of the animals that are not shared between them
     """
     species = "Horse"
@@ -382,7 +436,10 @@ class Horse(Animal):
 
 class Sheep(Animal):
 
-    """Species class will define the specific
+    """Create animal species
+
+
+    Species class will define the specific
     characteristics of the animals that are not shared between them
     """
     species = "Sheep"
@@ -399,16 +456,19 @@ class Sheep(Animal):
 
 class Lion(Animal):
 
-    """Species class will define the specific characteristics
-    of the animals that are not shared between them
+    """Create animal species
+
+
+    Species class will define the specific
+    characteristics of the animals that are not shared between them
     """
     # If the animal species has known prey,
     # they will be added as the prey property of the animal,
     #  to be used when the animal is added to the cage.
     species = "Lion"
     prey = [Sheep, Wildebeest, Impala, Zebra,
-             Giraffe, Buffalo, WildHog, Rhinoceros,
-             Hippopotamus]
+            Giraffe, Buffalo, WildHog, Rhinoceros,
+            Hippopotamus]
 
     def __init__(self, name):
         super().__init__(name)
@@ -419,15 +479,18 @@ class Lion(Animal):
 
 class Tiger(Animal):
 
-    """Species class will define the specific characteristics
-    of the animals that are not shared between them
+    """Create animal species
+
+
+    Species class will define the specific
+    characteristics of the animals that are not shared between them
     """
     # If the animal species has known prey,
     # they will be added as the prey property of the animal,
     #  to be used when the animal is added to the cage.
     species = "Tiger"
     prey = [Impala, Gazelles, Wildebeest,
-             Zebra, Goat, Sheep, Horse]
+            Zebra, Goat, Sheep, Horse]
 
     def __init__(self, name):
         super().__init__(name)
@@ -438,8 +501,11 @@ class Tiger(Animal):
 
 class Hyena(Animal):
 
-    """Species class will define the specific characteristics
-    of the animals that are not shared between them
+    """Create animal species
+
+
+    Species class will define the specific
+    characteristics of the animals that are not shared between them
     """
 
     # If the animal species has known prey,
@@ -447,7 +513,7 @@ class Hyena(Animal):
     #  to be used when the animal is added to the cage.
     species = "Hyena"
     prey = [Boar, WildPig, Bear, Buffalo,
-             WildCattle, Deer, Antelopes, Monkey]
+            WildCattle, Deer, Antelopes, Monkey]
 
     def __init__(self, name):
         super().__init__(name)
